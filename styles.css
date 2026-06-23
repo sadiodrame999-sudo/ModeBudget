@@ -580,13 +580,203 @@ a {
   .hero,
   .products-section,
   .partners-section,
-  .site-footer {
-    padding-left: 1.5rem;
-    padding-right: 1.5rem;
+  .site-footer,
+  .cart-page,
+  .delivery-page,
+  .delivery-section {
+    padding-left: 1rem;
+    padding-right: 1rem;
+  }
+
+  .site-header {
+    padding-top: 1.25rem;
+    padding-bottom: 1.25rem;
+    gap: 0.75rem;
+  }
+
+  .brand-logo {
+    min-width: 40px;
+    min-height: 40px;
+    border-radius: 12px;
+    font-size: 0.9rem;
+  }
+
+  .site-header h1 {
+    font-size: 0.85rem;
+  }
+
+  .main-nav {
+    gap: 1rem;
+    font-size: 0.85rem;
+    flex-wrap: wrap;
+  }
+
+  .hero {
+    padding: 1.5rem 1rem;
+    gap: 1.5rem;
   }
 
   .hero h2 {
-    font-size: 2.4rem;
+    font-size: 1.75rem;
+  }
+
+  .hero p {
+    font-size: 0.95rem;
+    line-height: 1.6;
+  }
+
+  .btn-primary {
+    padding: 0.75rem 1.25rem;
+    font-size: 0.95rem;
+    margin-top: 1.25rem;
+  }
+
+  .image-card {
+    min-height: 180px;
+    padding: 1.25rem;
+    border-radius: 20px;
+  }
+
+  .image-card h3 {
+    font-size: 1.3rem;
+    margin-top: 1rem;
+  }
+
+  .tag {
+    top: 1rem;
+    right: 1rem;
+    font-size: 0.75rem;
+    padding: 0.4rem 0.75rem;
+  }
+
+  .product-image {
+    min-height: 160px;
+  }
+
+  .section-header h2 {
+    font-size: 1.4rem;
+  }
+
+  .product-info {
+    padding: 1rem;
+  }
+
+  .product-category {
+    font-size: 0.75rem;
+  }
+
+  .product-info h3 {
+    font-size: 1.05rem;
+    margin-bottom: 0.75rem;
+  }
+
+  .price {
+    font-size: 0.95rem;
+  }
+
+  .buy-button {
+    padding: 0.7rem 1rem;
+    font-size: 0.9rem;
+    margin-top: 0.5rem;
+  }
+
+  .size-selector {
+    padding: 0.65rem 2.25rem 0.65rem 0.85rem;
+    font-size: 0.85rem;
+    margin-top: 0.5rem;
+  }
+
+  .partner-card {
+    padding: 1rem;
+    font-size: 1rem;
+    border-radius: 16px;
+  }
+
+  .site-footer {
+    padding-top: 1.5rem;
+    padding-bottom: 1.5rem;
+  }
+
+  .footer-links {
+    gap: 0.75rem;
+    font-size: 0.85rem;
+  }
+
+  .cart-root {
+    grid-template-columns: 1fr;
+  }
+
+  .cart-item {
+    grid-template-columns: 90px minmax(0, 1fr);
+    gap: 0.75rem;
+    padding: 0.75rem;
+  }
+
+  .cart-item-image {
+    width: 90px;
+    height: 90px;
+  }
+
+  .cart-item h3 {
+    font-size: 1rem;
+  }
+
+  .item-size {
+    font-size: 0.85rem;
+  }
+
+  .qty-controls button {
+    width: 2rem;
+    height: 2rem;
+  }
+
+  .delivery-grid {
+    grid-template-columns: 1fr;
+  }
+
+  .delivery-form-inner {
+    padding: 1rem;
+  }
+
+  .form-group input {
+    padding: 0.75rem 0.85rem;
+    font-size: 0.9rem;
+  }
+
+  .delivery-option-card {
+    padding: 0.85rem 1rem;
+  }
+
+  .delivery-option-name {
+    font-size: 0.95rem;
+  }
+
+  .delivery-summary h3 {
+    font-size: 1.15rem;
+  }
+}
+
+@media (max-width: 380px) {
+  .hero h2 {
+    font-size: 1.4rem;
+  }
+
+  .section-header h2 {
+    font-size: 1.2rem;
+  }
+
+  .product-info h3 {
+    font-size: 0.95rem;
+  }
+
+  .btn-primary {
+    padding: 0.65rem 1rem;
+    font-size: 0.85rem;
+  }
+
+  .main-nav {
+    gap: 0.6rem;
+    font-size: 0.8rem;
   }
 }
 
