@@ -1,0 +1,127 @@
+<!DOCTYPE html>
+<html lang="fr">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>ModeBudget - Livraison</title>
+  <link rel="stylesheet" href="styles.css" />
+</head>
+<body>
+  <header class="site-header">
+    <div class="brand">
+      <div class="brand-logo">MB</div>
+      <div>
+        <p class="eyebrow">ModeBudget</p>
+        <h1>Livraison</h1>
+      </div>
+    </div>
+    <nav class="main-nav">
+      <a href="index.html">Accueil</a>
+      <a href="modebudget.html">ModeBudget</a>
+      <a href="nike.html">Nike</a>
+      <a href="ralph-lauren.html">Ralph&nbsp;Lauren</a>
+      <a href="adidas.html">Adidas</a>
+      <a href="promotions.html">Promotions</a>
+      <a href="cart.html">Panier</a>
+    </nav>
+  </header>
+
+  <main class="delivery-page">
+    <section class="hero">
+      <div class="hero-content">
+        <p class="hero-label">LIVRAISON</p>
+        <h2>Choisissez votre mode de livraison</h2>
+        <p>Remplissez votre adresse et sélectionnez la livraison qui vous convient.</p>
+      </div>
+    </section>
+
+    <section class="delivery-section">
+      <div class="delivery-grid">
+        <div class="delivery-form">
+          <h2 class="section-header">Adresse de livraison</h2>
+          <form id="delivery-form" class="delivery-form-inner">
+            <div class="form-group">
+              <label for="delivery-name">Nom complet</label>
+              <input type="text" id="delivery-name" name="name" required placeholder="Jean Dupont" />
+            </div>
+            <div class="form-group">
+              <label for="delivery-address">Adresse</label>
+              <input type="text" id="delivery-address" name="address" required placeholder="12 rue de la Paix" />
+            </div>
+            <div class="form-row">
+              <div class="form-group">
+                <label for="delivery-city">Ville</label>
+                <input type="text" id="delivery-city" name="city" required placeholder="Paris" />
+              </div>
+              <div class="form-group">
+                <label for="delivery-postal">Code postal</label>
+                <input type="text" id="delivery-postal" name="postal" required placeholder="75001" />
+              </div>
+            </div>
+            <div class="form-group">
+              <label for="delivery-phone">Téléphone</label>
+              <input type="tel" id="delivery-phone" name="phone" required placeholder="06 12 34 56 78" />
+            </div>
+          </form>
+
+          <h2 class="section-header" style="margin-top: 2rem;">Mode de livraison</h2>
+          <div class="delivery-options" id="delivery-options">
+            <label class="delivery-option">
+              <input type="radio" name="delivery-method" value="standard" data-price="499" data-estimate="3 à 5 jours" checked />
+              <div class="delivery-option-card">
+                <div class="delivery-option-header">
+                  <span class="delivery-option-name">Standard</span>
+                  <span class="delivery-option-price">4,99 €</span>
+                </div>
+                <span class="delivery-option-estimate">3 à 5 jours ouvrables</span>
+              </div>
+            </label>
+            <label class="delivery-option">
+              <input type="radio" name="delivery-method" value="express" data-price="999" data-estimate="1 à 2 jours" />
+              <div class="delivery-option-card">
+                <div class="delivery-option-header">
+                  <span class="delivery-option-name">Express</span>
+                  <span class="delivery-option-price">9,99 €</span>
+                </div>
+                <span class="delivery-option-estimate">1 à 2 jours ouvrables</span>
+              </div>
+            </label>
+            <label class="delivery-option">
+              <input type="radio" name="delivery-method" value="pickup" data-price="299" data-estimate="3 à 5 jours" />
+              <div class="delivery-option-card">
+                <div class="delivery-option-header">
+                  <span class="delivery-option-name">Point relais</span>
+                  <span class="delivery-option-price">2,99 €</span>
+                </div>
+                <span class="delivery-option-estimate">3 à 5 jours ouvrables</span>
+              </div>
+            </label>
+          </div>
+        </div>
+
+        <aside class="delivery-summary">
+          <h3>Résumé</h3>
+          <div id="delivery-summary-content"></div>
+        </aside>
+      </div>
+    </section>
+  </main>
+
+  <footer class="site-footer">
+    <div>
+      <h2>ModeBudget</h2>
+      <p>Mode pas chère, qualité assurée.</p>
+    </div>
+    <div class="footer-links">
+      <a href="index.html">Accueil</a>
+      <a href="promotions.html">Promotions</a>
+      <a href="conditions.html">Conditions générales</a>
+      <a href="privacy.html">Politique de confidentialité</a>
+      <a href="legal.html">Mentions légales</a>
+      <a href="delivery.html">Livraison</a>
+    </div>
+  </footer>
+
+  <script src="delivery.js"></script>
+</body>
+</html>

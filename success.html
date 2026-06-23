@@ -1,0 +1,42 @@
+<!DOCTYPE html>
+<html lang="fr">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Paiement réussi - ModeBudget</title>
+  <link rel="stylesheet" href="styles.css" />
+</head>
+<body>
+  <main class="hero" style="min-height: 100vh;">
+    <div class="hero-content">
+      <p class="hero-label">Paiement réussi</p>
+      <h2>Merci pour votre commande</h2>
+      <p>Votre paiement a été validé. Vous pouvez revenir à la boutique pour continuer vos achats.</p>
+      <div id="delivery-info"></div>
+      <a class="btn-primary" href="index.html">Retour à la boutique</a>
+    </div>
+  </main>
+  <script>
+    (function() {
+      const DELIVERY_KEY = 'modebudget_delivery_v1';
+      const container = document.getElementById('delivery-info');
+      try {
+        const stored = localStorage.getItem(DELIVERY_KEY);
+        const data = stored ? JSON.parse(stored) : null;
+        if (data && data.customer && data.delivery) {
+          container.innerHTML = `
+            <div class="success-delivery-box">
+              <p><strong>Adresse de livraison :</strong><br>
+              ${data.customer.name}<br>
+              ${data.customer.address}<br>
+              ${data.customer.postal} ${data.customer.city}</p>
+              <p><strong>Mode de livraison :</strong> ${data.delivery.method}<br>
+              <strong>Délai estimé :</strong> ${data.delivery.estimate || '3 à 5 jours'}</p>
+            </div>
+          `;
+        }
+      } catch (e) {}
+    })();
+  </script>
+</body>
+</html>
