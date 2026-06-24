@@ -271,11 +271,19 @@ function renderCartPage() {
       <div class="cart-summary-row"><span>Sous-total</span><span>${formatCurrency(subtotal)}</span></div>
       <div class="cart-summary-row"><span>Livraison</span><span>${formatCurrency(shippingFee)}</span></div>
       <div class="cart-total"><span>Total</span><span>${formatCurrency(subtotal + shippingFee)}</span></div>
-      <a class="btn-primary" href="index.html">Continuer les achats</a>
+      <button type="button" class="btn-primary" id="checkout-button">Passer la commande</button>
+      <a class="btn-primary" href="index.html" style="background: transparent; color: var(--text); border: 1px solid rgba(255,255,255,0.16);">Continuer les achats</a>
       <button type="button" class="secondary-action" data-action="clear-cart">Vider le panier</button>
       <p class="cart-note">Le paiement réel est géré par Stripe Checkout quand le serveur est lancé.</p>
     </aside>
   `;
+
+  const checkoutButton = document.getElementById('checkout-button');
+  if (checkoutButton) {
+    checkoutButton.addEventListener('click', () => {
+      window.location.href = 'delivery.html';
+    });
+  }
 
   root.querySelectorAll('[data-action="increase"]').forEach((button) => {
     button.addEventListener('click', () => changeQuantity(button.dataset.id, 1));
@@ -295,32 +303,11 @@ function renderCartPage() {
   }
 }
 
-function injectCheckoutFlow() {
-  if (!document.querySelector('.cart-summary') || document.querySelector('[data-checkout-button]')) {
-    return;
-  }
-
-  const summary = document.querySelector('.cart-summary');
-  if (!summary) return;
-
-  const checkoutButton = document.createElement('button');
-  checkoutButton.type = 'button';
-  checkoutButton.className = 'btn-primary';
-  checkoutButton.setAttribute('data-checkout-button', 'true');
-  checkoutButton.textContent = 'Passer la commande';
-  checkoutButton.addEventListener('click', () => {
-    window.location.href = 'delivery.html';
-  });
-
-  summary.appendChild(checkoutButton);
-}
-
 function initCart() {
   ensureCartLauncher();
   injectAddButtons();
   updateCartBadge();
   renderCartPage();
-  injectCheckoutFlow();
 }
 
 if (document.readyState === 'loading') {
